@@ -1,79 +1,44 @@
 <!DOCTYPE html>
 <html>
-<style>
-#header1{
-    background-color: brown;
-    color: white;
-    backface-visibility: visible;
-}
-#header1:hover{
-    color: rgb(0, 0, 0);
-    background-color: rgb(200, 168, 42);
-}
-.button {
-  border: none;
-  color: white;
-  padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-}
-
-.button1 {
-  background-color: white; 
-  color: black; 
-  border: 2px solid #4c53af;
-  margin-right: 10%;
-  margin-top: 20%;
-}
-
-.button1:hover {
-  background-color: #a84caf;
-  color: white;
-}
-
-.button2 {
-  background-color: white; 
-  color: black; 
-  border: 2px solid #008CBA;
-  margin-right: 10%;
-  margin-top: 20%;
-}
-
-.button2:hover {
-  background-color: #9eba00;
-  color: white;
-}
-.button3 {
-  background-color: white; 
-  color: black; 
-  border: 2px solid #008CBA;
-}
-
-.button3:hover {
-  background-color: #00ba76;
-  color: white;
-}
-
-</style>
-</head>
+  <link rel="stylesheet" href="index.css">
 <body>
-
+<style>
+#dropdown1main{
+  position: relative;
+  left: 50px;
+  top: 100px;
+}
+  #dropdown2main{
+    position: relative;
+    left: 250px;
+    top: 100px;
+  }
+</style>
 <center>
-    <h1 id="header1">DKTE CSE 3rd SEM SUBJECTS</h1>
+    <h1 id="header1">DKTE CSE DEPARTMENT</h1>
 
-    <!-- <button class="button button1">Green</button> -->
-    <a href="datastructure.html" target="_blank">
-        <button class="button button1">Data Structure</button></a>
-    <a href="networking.html" target="_blank">
-    <button class="button button2">Networking</button></a>
-    <a href="maths.html" target="_blank">
-    <button class="button button3">Maths</button></a>
 </center>
+<div class="dropdown" id="dropdown1main">
+  <button class="dropbtn">SEM-3</button>
+  <div class="dropdown-content">
+    <div>
+    <a href="datastructure.html">Data Structure</a>
+  </div>
+    <a href="networking.html">Networking</a>
+    <a href="maths.html">Maths</a>
+  </div>
+</div>
+
+<div class="dropdown" id="dropdown2main">
+  <button class="dropbtn">SEM-4</button>
+  <div class="dropdown-content">
+    <a href="">OOP</a>
+    <a href="algorithm.html">ALGO</a>
+    <a href="">COA</a>
+    <a href="">AMAM</a>
+    <a href="">ACN</a>
+  </div>
+</div>
 <p></p>
 </body>
 </html>
