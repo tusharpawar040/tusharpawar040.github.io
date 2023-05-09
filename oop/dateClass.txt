@@ -1,0 +1,147 @@
+#include <iostream>
+using namespace std;
+
+class Date
+{
+private:
+    int day;
+    int month;
+    int year;
+
+public:
+    Date(int d, int m, int y)
+    {
+        day = d;
+        month = m;
+        year = y;
+    }
+
+    void setDay(int d)
+    {
+        day = d;
+    }
+    void setMonth(int m)
+    {
+        month = m;
+    }
+    void setYear(int y)
+    {
+        year = y;
+    }
+    int getDay()
+    {
+        return day;
+    }
+    int getMonth()
+    {
+        return month;
+    }
+    int getYear()
+    {
+        return year;
+    }
+
+    void display()
+    {
+        cout << day << "/" << month << "/" << year << endl;
+    }
+
+    bool isLeapYear()
+    {
+
+        if (year % 4 == 0 || year % 400 == 0)
+        {
+            return 1;
+        }
+
+        else
+        {
+            return 0;
+        }
+    }
+    int increment(int d, int m, int y)
+    {
+        if (d <= 27)
+        {
+            d++;
+        }
+        else if (d == 28)
+        {
+            if (m == 2)
+            {
+                if (isLeapYear())
+                {
+                    d++;
+                }
+                else
+                {
+                    d = 1;
+                    m++;
+                }
+            }
+            
+            else
+            {
+                d++;
+            }
+        }
+        else if (d == 29)
+        {
+        	
+            d = 1;
+            m++;
+        }
+        else if (d == 30)
+        {
+            if ((m == 4) || (m == 6) || (m == 9) || (m == 11))
+            {
+                d = 1;
+                m++;
+            }
+            else
+            {
+                d++;
+            }
+        }
+        
+        else
+        {
+            if (m == 12)
+            {
+            	
+                d = 1;
+                m = 1;
+                y++;
+            }
+           
+            else
+            {
+                d = 1;
+                m++;
+            }
+        }
+        cout << "Incremented Date is\n";
+        cout << d << "/" << m << "/" << y << endl;
+    }
+};
+int main()
+{
+    int day, month, year;
+    cout << "Enter the day: ";
+    cin >> day;
+    cout << "Enter the month: ";
+    cin >> month;
+    cout << "Enter the year: ";
+    cin >> year;
+
+    
+    Date d1(day, month, year);
+    
+    cout << "Date: ";
+    d1.display();
+
+   
+
+    int ans = d1.increment(day, month, year);
+   return 0;
+}

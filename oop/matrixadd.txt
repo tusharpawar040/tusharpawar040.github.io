@@ -1,0 +1,70 @@
+#include<iostream>
+using namespace std;
+
+class matrix
+{
+	private:int a[3][3];
+	public:int i,j;
+		void accept();
+		void display();
+		void operator +(matrix x);
+		
+};
+void matrix::accept()
+{
+	cout<<"\n Enter the matrix element= \n";
+	for(i=0;i<3;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+			cout<<" ";
+			cin>>a[i][j];
+		}
+	}
+}
+void matrix::display()
+{
+	for(i=0;i<3;i++)
+	{
+		cout<<" ";
+		for(j=0;j<3;j++)
+		{
+			cout<<"\t"<<a[i][j];
+		}
+		cout<<"\n";
+	}
+}
+void matrix::operator +(matrix x)
+{
+	int mat[3][3];
+	for(i=0;i<3;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+			mat[i][j]=a[i][j]+x.a[i][j];
+		}
+		
+	}
+	cout<<"\n addition of matrix= \n\n";
+	for(i=0;i<3;i++)
+	{
+		cout<<" ";
+		for(j=0;j<3;j++)
+		{
+			cout<<"\t"<<mat[i][j];
+		}
+	}cout<<"\n";
+}
+int main()
+{
+	matrix m,n;
+	m.accept();
+	n.accept();
+	cout<<"\n first matrix elements=\n";
+	m.display();
+	cout<<"\n second matrix elements=\n";
+	n.display();
+	m+n;
+	
+	
+}
