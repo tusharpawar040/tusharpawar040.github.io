@@ -1,0 +1,121 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+class Person{
+	string name;
+	string address;
+	
+	public:
+		Person(){
+			cout<<"\nPerson created";
+		}
+		void setName(string n);
+		void setAddr(string a);
+		string getName();
+		string getAddr();
+};
+
+class Customer: virtual public Person{
+	int no_prod;
+	
+	public:
+		Customer(){
+			cout<<"\nCustomer parameter created";
+		}
+		Customer(string name,string address,int no_prod)
+		{
+		    this->setName(name);
+		    this->setAddr(address);
+		    this->setNo_prod(no_prod);
+		}
+		void setNo_prod(int i);
+		int getNo_prod();
+};
+
+class Employee: virtual public Person{
+	int salary;
+	int empid;
+	
+	public:
+		Employee(){
+			cout<<"\nEmployee created";
+		}
+		void setSalary(int s);
+		void setEmpid(int e);
+		int getSalary();
+		int getEmpid();
+};
+
+class EmployeeCustomer: public Employee,public Customer{
+	public:
+		EmployeeCustomer(){
+			cout<<"\nEmployeeCustomer created";
+		}
+		EmployeeCustomer(string name,string address,int no_prod,int salary,int empid)
+		{
+			this->setName(name);
+			this->setAddr(address);
+			this->setNo_prod(no_prod);
+			this->setSalary(salary);
+			this->setEmpid(empid);
+		}
+};
+
+void Person::setName(string n){
+	name = n;
+}
+void Person::setAddr(string a){
+	address = a;
+}
+string Person::getName(){
+	return name;
+}
+string Person::getAddr(){
+	return address;
+}
+
+void Customer::setNo_prod(int i){
+	no_prod = i;
+}
+		
+int Customer::getNo_prod(){
+	return no_prod;
+}
+		
+void Employee::setSalary(int s){
+	salary = s;
+}
+		
+void Employee::setEmpid(int e){
+	empid = e;
+}
+		
+int Employee::getSalary(){
+	return salary;
+}
+		
+int Employee::getEmpid(){
+	return empid;
+}
+
+int main(){
+
+	Customer c("Aditya","kwd",1);
+	cout<<endl;
+	cout<<c.getName()<<"\t";
+	cout<<c.getAddr()<<"\t";
+	cout<<c.getNo_prod()<<"\t";
+	
+	
+	EmployeeCustomer e2("Aditya","kwd",1,10000,1);
+	cout<<endl;
+	cout<<e2.getName()<<"\t";
+	cout<<e2.getAddr()<<"\t";
+	cout<<e2.getNo_prod()<<"\t";
+	cout<<e2.getSalary()<<"\t";
+	cout<<e2.getEmpid()<<"\t";
+	
+	
+	return 0;
+}
